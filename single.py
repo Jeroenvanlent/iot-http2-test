@@ -1,7 +1,7 @@
 import hyper
 import time
 
-times = 100
+times = 1
 
 start1 = time.clock()
 for x in range(0, times):
@@ -12,14 +12,14 @@ end1 = time.clock()
 
 start2 = time.clock()
 for x in range(0, times):
-  con2 = hyper.HTTP11Connection('iot.local', '1200')
+  con2 = hyper.HTTP11Connection('iot.local', '1200', 'True')
   con2.request('GET', '/')
   resp2 = con2.get_response()
 end2 = time.clock()
 
 start3 = time.clock()
 for x in range(0, times):
-  con3 = hyper.HTTP20Connection('iot.local', '1300')
+  con3 = hyper.HTTP20Connection('iot.local', '1300', 'True')
   con3.request('GET', '/')
   resp3 = con3.get_response()
 end3 = time.clock()
